@@ -4,6 +4,10 @@ require 'sdbm'
 
 set :port, 3002
 
+get '/' do
+    '<p><a href="screen-chihaya-pm.app.dmg">for Mac</a></p>'
+end
+
 post '/upload' do
     id = params['id']
     imagedata = params['imagedata'][:tempfile].read
