@@ -23,7 +23,9 @@ post '/upload' do
     dbm[hash] = id
     dbm.close
 
-    File.open("data/#{hash}.png","w").print(imagedata)
+    f = File.open("data/#{hash}.png","w")
+    f.print(imagedata)
+    f.close
 
     if create_newid then
         headers "X-Gyazo-Id" => id
