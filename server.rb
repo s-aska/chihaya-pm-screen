@@ -27,6 +27,8 @@ post '/upload' do
     f.print(imagedata)
     f.close
 
+    system("mogrify -geometry 50% data/#{hash}.png")
+
     if create_newid then
         headers "X-Gyazo-Id" => id
     end
